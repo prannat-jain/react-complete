@@ -6,11 +6,15 @@ import "./ExpenseItem.css";
 
 function ExpenseItem(props) {
   //react hook(function) for onclick..useState will give two values
+  //name is the default state value, changeName is the new/updated state
   const [name, changeName] = useState(props.name);
 
   function clickHandler() {
     //the state changed value is used here in the function
+    //because of this below change in value, we want to rerender html parts using states
+    //we do not use this: name = "Updated!", but use the state function changeName
     changeName("Updated!");
+    console.log(name);
   }
 
   return (

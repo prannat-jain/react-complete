@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
   //making a database using arrays
@@ -32,7 +33,7 @@ function App() {
 
   return (
     <div>
-      <h2>Yearly Expenses list</h2>
+      <NewExpense />
       <Expenses expenses={expenses_array}></Expenses>
     </div>
   );
