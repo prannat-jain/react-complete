@@ -1,21 +1,21 @@
 //useState is a single fucntion imported for onclick dynamic function to work
-import React, { useState } from "react";
+import React from "react";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 function ExpenseItem(props) {
   //react hook(function) for onclick..useState will give two values
-  //name is the default state value, changeName is the new/updated state
-  const [name, changeName] = useState(props.name);
+  //title is the default state value, changeTitle is the new/updated state
+  //const [title, changeTitle] = useState(props.title);
 
-  function clickHandler() {
-    //the state changed value is used here in the function
-    //because of this below change in value, we want to rerender html parts using states
-    //we do not use this: name = "Updated!", but use the state function changeName
-    changeName("Updated!");
-    console.log(name);
-  }
+  //function clickHandler() {
+  //the state changed value is used here in the function
+  //because of this below change in value, we want to rerender html parts using states
+  //we do not use this: title = "Updated!", but use the state function changeName
+  //changeTitle("Updated!");
+  //console.log(title);
+  //}
 
   return (
     //replaced return div with a custom card component that gives the card look
@@ -25,10 +25,9 @@ function ExpenseItem(props) {
       <ExpenseDate date={props.date}></ExpenseDate>
 
       <div className="expense-item__description">
-        <h2>{name}</h2>
-        <div className="expense-item__price">{props.charge}</div>
+        <h2>{props.title}</h2>
+        <div className="expense-item__price">{props.amount}</div>
       </div>
-      <button onClick={clickHandler}>Change Title</button>
     </Card>
   );
 }
