@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
-//making a database using arrays
+//making a database using arrays just for initialising the website
 const DUMMY_EXPENSES = [
   {
     id: "e1",
@@ -24,7 +24,7 @@ const DUMMY_EXPENSES = [
     date: new Date(2021, 5, 5),
   },
   {
-    id: "e1",
+    id: "e4",
     title: "Lights replace",
     amount: 54.13,
     date: new Date(2020, 3, 4),
@@ -36,6 +36,7 @@ function App() {
 
   //trtiggered whenever a new expense is added
   const addExpenseHandler = (expense) => {
+    //prevstate function passed into setExpenses
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
     });
