@@ -20,15 +20,17 @@ function ExpenseItem(props) {
   return (
     //replaced return div with a custom card component that gives the card look
     //cannot set a classname to a custom div therefore expenseitem.css wont work by default...need to make changes for that in card.js
-    <Card className="expense-item">
-      {/*making the dates look nicer in expensedata....Using date(props) passed to this class from app.js and passing it to expensedate.js as props again*/}
-      <ExpenseDate date={props.date}></ExpenseDate>
+    <li>
+      <Card className="expense-item">
+        {/*making the dates look nicer in expensedata....Using date(props) passed to this class from app.js and passing it to expensedate.js as props again*/}
+        <ExpenseDate date={props.date}></ExpenseDate>
 
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-      </div>
-    </Card>
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <div className="expense-item__price">${props.amount}</div>
+        </div>
+      </Card>
+    </li>
   );
 }
 

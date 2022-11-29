@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Expenses.css";
-import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesList from "./ExpensesList";
 
 function Expenses(props) {
   const [filteredYear, setFilteredYear] = useState("2019");
@@ -25,16 +25,8 @@ function Expenses(props) {
           onChangeFilter={filterHandler}
         ></ExpensesFilter>
 
-        {/*map() is a built in js function which gives an array of expenses_array in App.js*/}
-        {filteredExpenses.map((expenseObj) => (
-          <ExpenseItem
-            //key helps in identifying individual items of a component
-            key={expenseObj.id}
-            title={expenseObj.title}
-            amount={expenseObj.amount}
-            date={expenseObj.date}
-          />
-        ))}
+        {/*If filteredExpenses.length was empty then variable is displayed as it is, otherwise if-else statement changes the value of this variable*/}
+        <ExpensesList list={filteredExpenses} />
       </Card>
     </div>
   );
