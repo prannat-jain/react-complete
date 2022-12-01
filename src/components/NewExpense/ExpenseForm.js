@@ -44,7 +44,7 @@ function ExpenseForm(props) {
     //to do that we are going to go child to parent: Expenseform>NewExpense>App.js
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
     //executing function in ExpenseData whose reference/pointer is received by props
