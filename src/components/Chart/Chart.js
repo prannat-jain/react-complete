@@ -11,7 +11,7 @@ function Chart(props) {
     <div className="chart">
       {/* instead of returning separate ChartBar tags we use a map which get data from props*/}
 
-      {/*Using labels as a unique identifier(key) instead of id*/}
+      {/*Using labels as unique identifiers(key) instead of id*/}
       {props.dataPoints.map((dataPoint) => (
         <ChartBar
           key={dataPoint.label}
